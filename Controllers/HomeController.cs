@@ -11,8 +11,8 @@ namespace MachineName.Controllers
     [Route("/")]
     public class HomeController : ControllerBase
     {
-       [HttpGet]
-       public IActionResult Get()
+        [HttpGet]
+        public IActionResult Get()
         {
             return Ok(System.Environment.MachineName);
         }
