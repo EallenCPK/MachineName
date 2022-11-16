@@ -16,8 +16,15 @@ namespace MachineName.Controllers
         [HttpGet]
         public string Get()
         {
-            return "Hello";
-        }
+            var ips = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList;
+            string result = string.Empty;
 
+            foreach (var ip in ips)
+            {
+                result += ip.ToString();
+                result += "\n";
+            }
+            return result;
+        }
     }
 }
